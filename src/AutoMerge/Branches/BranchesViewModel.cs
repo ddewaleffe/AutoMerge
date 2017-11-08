@@ -283,7 +283,7 @@ namespace AutoMerge
                 return "Changeset not selected";
 
             if (changeset.Branches.IsNullOrEmpty())
-                return "Changeset has not branch";
+                return "Changeset has no branch";
 
             if (changeset.Branches.Count > 1)
                 return string.Format("Changeset has {0} branches. Merge not possible.", changeset.Branches.Count);

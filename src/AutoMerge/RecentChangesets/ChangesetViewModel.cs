@@ -6,9 +6,11 @@ namespace AutoMerge
 	{
 		public int ChangesetId { get; set; }
 
-		public string Comment { get; set; }
+	    public string Username { get; set; }
 
-		public List<string> Branches { get; set; }
+	    public string Comment { get; set; }
+
+        public List<string> Branches { get; set; }
 
 		public string DisplayBranchName
 		{

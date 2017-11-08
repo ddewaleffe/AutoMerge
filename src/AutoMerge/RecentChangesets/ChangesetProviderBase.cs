@@ -30,6 +30,7 @@ namespace AutoMerge
             {
                 ChangesetId = tfsChangeset.ChangesetId,
                 Comment = tfsChangeset.Comment,
+                Username = tfsChangeset.Committer,
                 Branches = changesetService.GetAssociatedBranches(tfsChangeset.ChangesetId)
                     .Select(i => i.Item)
                     .ToList()

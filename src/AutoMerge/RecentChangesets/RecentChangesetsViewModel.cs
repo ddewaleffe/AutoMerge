@@ -141,7 +141,7 @@ namespace AutoMerge
             var userLogin = VersionControlNavigationHelper.GetAuthorizedUser(ServiceProvider);
 
             Logger.Info("Getting changesets ...");
-            var changesets = await changesetProvider.GetChangesets(userLogin);
+            var changesets = await changesetProvider.GetChangesets(null);
             Logger.Info("Getting changesets end");
 
             Changesets = new ObservableCollection<ChangesetViewModel>(changesets);

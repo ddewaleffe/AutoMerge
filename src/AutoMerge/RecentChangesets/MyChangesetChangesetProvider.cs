@@ -18,8 +18,8 @@ namespace AutoMerge
 		{
 			var changesets = new List<ChangesetViewModel>();
 
-			if (!string.IsNullOrEmpty(userLogin))
-			{
+			//if (!string.IsNullOrEmpty(userLogin))
+			//{
 				var changesetService = GetChangesetService();
 
 				if (changesetService != null)
@@ -30,7 +30,7 @@ namespace AutoMerge
 						.Select(tfsChangeset => ToChangesetViewModel(tfsChangeset, changesetService))
 						.ToList();
 				}
-			}
+			//}
 
 			return changesets;
 		}

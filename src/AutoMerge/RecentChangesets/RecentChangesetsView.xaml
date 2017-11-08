@@ -30,6 +30,7 @@
             <ToolTip Content="{Binding Comment}" />
           </StackPanel.ToolTip>
           <TextBlock Margin="0, 0, 0, 0" Text="{Binding ChangesetId}" />
+          <TextBlock Margin="5, 0, 0, 0" Text="{Binding Username}" />
           <TextBlock Margin="5, 0, 0, 0"
                      VerticalAlignment="Center"
                      Background="{DynamicResource EmbeddedDialogBackgroundBrushKey}"

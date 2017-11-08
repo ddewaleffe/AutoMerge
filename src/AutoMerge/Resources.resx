@@ -121,7 +121,7 @@
     <value>Auto Merge</value>
   </data>
   <data name="RecentChangesetSectionName" xml:space="preserve">
-    <value>My recent changesets</value>
+    <value>Recent changesets</value>
   </data>
   <data name="BrancheSectionName" xml:space="preserve">
     <value>Target branches</value>
