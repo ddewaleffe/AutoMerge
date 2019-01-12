@@ -70,6 +70,15 @@ namespace AutoMerge {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto Merge (Team).
+        /// </summary>
+        internal static string AutoMergeTeamPageName {
+            get {
+                return ResourceManager.GetString("AutoMergeTeamPageName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Target branches.
         /// </summary>
         internal static string BrancheSectionName {
