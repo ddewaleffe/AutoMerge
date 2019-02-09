@@ -20,7 +20,7 @@ namespace AutoMerge
                 VersionSpec.Latest,
                 0,
                 RecursionType.Full,
-                userName,
+                userName, //all users if null??
                 null,
                 null,
                 count,
@@ -73,7 +73,7 @@ namespace AutoMerge
 
 
         public IEnumerable<BranchObject> ListBranches(string projectName)
-        {                
+        {
             var dummy =  _versionControlServer.QueryRootBranchObjects(RecursionType.Full);
 
             var result = new List<BranchObject>();

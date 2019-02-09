@@ -30,7 +30,9 @@ namespace AutoMerge
             {
                 ChangesetId = tfsChangeset.ChangesetId,
                 Comment = tfsChangeset.Comment,
+                ChangeDate = tfsChangeset.CreationDate.ToString("yyyy-MM-dd"),
                 Username = tfsChangeset.Committer,
+                UserDisplayName = tfsChangeset.CommitterDisplayName,
                 Branches = changesetService.GetAssociatedBranches(tfsChangeset.ChangesetId)
                     .Select(i => i.Item)
                     .ToList()
@@ -59,7 +61,7 @@ namespace AutoMerge
         }
 
         protected IServiceProvider ServiceProvider()
-        { 
+        {
             return _serviceProvider;
         }
     }

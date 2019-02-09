@@ -52,7 +52,7 @@ namespace AutoMerge.RecentChangesets.Solo
         public override async Task<List<ChangesetViewModel>> GetChangesetsAsync()
         {
             var userLogin = VersionControlNavigationHelper.GetAuthorizedUser(ServiceProvider);
-            var changesetProvider = new MyChangesetChangesetProvider(ServiceProvider, Settings.Instance.ChangesetCount, userLogin);
+            var changesetProvider = new MyChangesetChangesetProvider(ServiceProvider, Settings.Instance.ChangesetCount, userLogin, Settings.Instance.OnlyMeWhenSolo);
 
             return await changesetProvider.GetChangesets();
         }

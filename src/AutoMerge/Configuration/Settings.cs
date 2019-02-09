@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace AutoMerge
@@ -28,7 +28,10 @@ namespace AutoMerge
         private const string branchDelimiterDefault = " -> ";
 
         private const string changesetCountKey = "changeset_count_show";
-        private const int changesetCountDefault = 20;
+        private const int changesetCountDefault = 30;
+
+        private const string onlyMeWhenSoloKey = "only_me_when_solo";
+        private const bool onlyMeWhenSoloDefault = false;
 
         static Settings()
         {
@@ -66,6 +69,10 @@ namespace AutoMerge
         public int ChangesetCount
         {
             get { return ChangesetCountGet(); }
+        }
+        public bool OnlyMeWhenSolo
+        {
+            get { return OnlyMeWhenSoloGet(); }
         }
 
         private CommentFormat CommentFormatGet()
@@ -171,7 +178,7 @@ namespace AutoMerge
             return mergeOperationDefaultValue;
         }
 
-        private  int ChangesetCountGet()
+        private int ChangesetCountGet()
         {
             int changesetCount;
             if (!_settingProvider.TryReadValue(changesetCountKey, out changesetCount))
@@ -180,6 +187,16 @@ namespace AutoMerge
             }
 
             return changesetCount;
+        }
+        private bool OnlyMeWhenSoloGet()
+        {
+            bool onlyMeWhenSolo;
+            if (!_settingProvider.TryReadValue(onlyMeWhenSoloKey, out onlyMeWhenSolo))
+            {
+                onlyMeWhenSolo = onlyMeWhenSoloDefault;
+            }
+
+            return onlyMeWhenSolo;
         }
     }
 }
